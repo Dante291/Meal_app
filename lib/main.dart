@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
               bodyLarge: const TextStyle(color: Colors.white),
-              bodyMedium: const TextStyle(color: Colors.white),
+              bodyMedium: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
               titleLarge: const TextStyle(
                   // color: Colors.white,
                   fontSize: 24,
