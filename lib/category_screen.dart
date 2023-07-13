@@ -7,14 +7,17 @@ class Category_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView(
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
-        children: DUMMY_CATEGORIES
-            .map((catDATA) => Category_item(catDATA.color, catDATA.title))
-            .toList());
+    return Scaffold(
+      appBar: AppBar(title: const Text('Swadisht Khazana')),
+      body: GridView(
+          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20),
+          children: DUMMY_CATEGORIES
+              .map((catDATA) => Category_item(catDATA.color, catDATA.title))
+              .toList()),
+    );
   }
 }
