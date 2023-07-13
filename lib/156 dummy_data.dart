@@ -20,7 +20,7 @@ const DUMMY_CATEGORIES = [
   Category(
     id: 'c4',
     title: 'German',
-    color: Colors.amber,
+    color: Color.fromARGB(255, 241, 181, 2),
   ),
   Category(
     id: 'c5',

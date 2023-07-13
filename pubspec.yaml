@@ -16,4 +16,20 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: assets/Raleway-Regular.ttf
+        - asset: assets/Raleway-Bold.ttf
+          weight: 700
+        - asset: assets/Raleway-Black.ttf
+          weight: 900
+    - family: RobotoCondensed
+      fonts:
+        - asset: assets/RobotoCondensed-Italic.ttf
+          style: italic
+        - asset: assets/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: assets/RobotoCondensed-Light.ttf
+          weight: 300   
   uses-material-design: true
