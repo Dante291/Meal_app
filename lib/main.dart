@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/category_meals_screen.dart';
 import 'package:meal_app/category_screen.dart';
 
 void main() {
@@ -20,12 +21,13 @@ class MainApp extends StatelessWidget {
               bodyLarge: const TextStyle(color: Colors.white),
               bodyMedium: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
               titleLarge: const TextStyle(
-                  // color: Colors.white,
+                  color: Color.fromARGB(255, 72, 71, 71),
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'RobotoCondensed'))),
       title: 'Swadisht Khazana',
       home: Category_screen(),
+      routes: {'/category_meals': (context) => CategoryMealScreen()},
     );
   }
 }
