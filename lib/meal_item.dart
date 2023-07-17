@@ -45,25 +45,29 @@ class mealIteam extends StatelessWidget {
                   Positioned(
                       bottom: 20,
                       right: 10,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.black54,
-                        ),
-                        constraints: BoxConstraints(
-                            maxWidth: MediaQuery.of(context).size.width * 0.7),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 3, horizontal: 15),
-                        child: Text(
-                          title,
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                          style: const TextStyle(
-                            fontSize: 25,
-                            color: Colors.white,
+                      child: Flex(direction: Axis.horizontal, children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.black54,
+                          ),
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width * 0.9,
+                          ),
+                          // width: 350,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 3, horizontal: 15),
+                          child: Text(
+                            title,
+                            softWrap: true,
+                            overflow: TextOverflow.fade,
+                            style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
-                      ))
+                      ]))
                 ],
               ),
             ],
