@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/category_meals_screen.dart';
-import 'package:meal_app/category_screen.dart';
+import './category_meals_screen.dart';
+import './category_screen.dart';
+import './meal_detail_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -27,7 +28,10 @@ class MainApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed'))),
       title: 'Swadisht Khazana',
       home: Category_screen(),
-      routes: {CategoryMealScreen.routename: (context) => CategoryMealScreen()},
+      routes: {
+        CategoryMealScreen.routename: (context) => CategoryMealScreen(),
+        MealDetailScreen.routename: (context) => MealDetailScreen()
+      },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
 import 'package:meal_app/meal_item.dart';
 
+// ignore: use_key_in_widget_constructors
 class CategoryMealScreen extends StatelessWidget {
   static const routename = '/category_meals';
   @override
@@ -20,6 +21,7 @@ class CategoryMealScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) {
           return mealIteam(
+              id: categoryMeal[index].id,
               affordability: categoryMeal[index].affordability,
               complexity: categoryMeal[index].complexity,
               duration: categoryMeal[index].duration,
