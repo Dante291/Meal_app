@@ -11,25 +11,31 @@ class MealDetailScreen extends StatelessWidget {
     final selectedimage =
         DUMMY_MEALS.firstWhere((element) => element.id == mealId);
     return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        color: Color.fromARGB(255, 218, 255, 192),
-        child: Column(
-          children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(100)),
+      appBar: AppBar(
+        title: Text(
+          selectedimage.title,
+        ),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 300,
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(20)),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
               child: Image.network(
                 selectedimage.imageUrl,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
+                height: 300,
+                width: double.infinity,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
