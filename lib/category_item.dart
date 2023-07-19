@@ -23,11 +23,19 @@ class Category_item extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              color.withOpacity(0.7),
-              color,
-            ], begin: Alignment.topLeft, end: Alignment.bottomRight),
-            borderRadius: BorderRadius.circular(15)),
+          gradient: LinearGradient(colors: [
+            color.withOpacity(0.7),
+            color,
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(255, 205, 204, 204),
+              spreadRadius: 3,
+              blurRadius: 5,
+            )
+          ],
+        ),
         child: Text(
           title,
           style: Theme.of(context).textTheme.titleLarge,

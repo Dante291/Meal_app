@@ -28,6 +28,8 @@ class CategoryMealScreen extends StatelessWidget {
               imageUrl: categoryMeal[index].imageUrl,
               title: categoryMeal[index].title);
         },
+        physics: const BouncingScrollPhysics()
+            .applyTo(const AlwaysScrollableScrollPhysics()),
         itemCount: categoryMeal.length,
       ),
     );
