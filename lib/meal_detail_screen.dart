@@ -44,7 +44,7 @@ class MealDetailScreen extends StatelessWidget {
             height: 8,
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(

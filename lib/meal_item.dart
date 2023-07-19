@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/meal.dart';
 import 'package:meal_app/meal_detail_screen.dart';
 
+// ignore: camel_case_types
 class mealIteam extends StatelessWidget {
   final String id;
   final String title;
@@ -11,6 +12,7 @@ class mealIteam extends StatelessWidget {
   final Complexity complexity;
   final Color color;
 
+  // ignore: use_key_in_widget_constructors
   const mealIteam({
     required this.color,
     required this.id,

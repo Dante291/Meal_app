@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/category_meals_screen.dart';
 
+// ignore: camel_case_types
 class Category_item extends StatelessWidget {
   final String id;
   final String title;

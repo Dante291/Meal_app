@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontFamily: 'RobotoCondensed'))),
       title: 'Swadisht Khazana',
-      home: Category_screen(),
+      home: const Category_screen(),
       routes: {
         CategoryMealScreen.routename: (context) => CategoryMealScreen(),
         MealDetailScreen.routename: (context) => MealDetailScreen()
