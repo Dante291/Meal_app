@@ -88,11 +88,11 @@ class mealIteam extends StatelessWidget {
                           constraints: BoxConstraints(
                             maxWidth: MediaQuery.of(context).size.width * 0.9,
                           ),
-                          // width: 350,
                           padding: const EdgeInsets.symmetric(
                               vertical: 3, horizontal: 15),
                           child: Text(
                             title,
+                            textAlign: TextAlign.center,
                             softWrap: true,
                             overflow: TextOverflow.fade,
                             style: const TextStyle(
