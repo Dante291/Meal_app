@@ -11,7 +11,7 @@ class Category_item extends StatelessWidget {
 
   void screenCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMealScreen.routename,
-        arguments: {'id': id, 'title': title});
+        arguments: {'id': id, 'title': title, 'color': color});
   }
 
   @override
@@ -24,7 +24,7 @@ class Category_item extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            color.withOpacity(0.7),
+            color.withOpacity(0.8),
             color,
           ], begin: Alignment.topLeft, end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(15),

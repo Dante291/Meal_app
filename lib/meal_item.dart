@@ -9,8 +9,10 @@ class mealIteam extends StatelessWidget {
   final Affordability affordability;
   final int duration;
   final Complexity complexity;
+  final Color color;
 
   const mealIteam({
+    required this.color,
     required this.id,
     required this.affordability,
     required this.complexity,
@@ -46,10 +48,8 @@ class mealIteam extends StatelessWidget {
   }
 
   void selectmaterial(BuildContext context) {
-    Navigator.of(context).pushNamed(
-      MealDetailScreen.routename,
-      arguments: id,
-    );
+    Navigator.of(context).pushNamed(MealDetailScreen.routename,
+        arguments: {'id': id, 'color': color, 'title': title});
   }
 
   @override

@@ -8,19 +8,22 @@ class CategoryMealScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final routeArgs =
-        ModalRoute.of(context)?.settings.arguments as Map<String, String>;
-    final categoryTitle = routeArgs['title'];
-    final categoryID = routeArgs['id'];
-    final categoryMeal = DUMMY_MEALS.where((meal) {
-      return meal.categories.contains(categoryID);
+        ModalRoute.of(context)?.settings.arguments as Map<String, Object>;
+    final categoryTitle = routeArgs['title'].toString();
+    final categoryID = routeArgs['id'].toString();
+    final categoryColor = routeArgs['color'] as Color;
+    final categoryMeal = DUMMY_MEALS.where((pew) {
+      return pew.categories.contains(categoryID);
     }).toList();
     return Scaffold(
       appBar: AppBar(
         title: Text(categoryTitle!),
+        backgroundColor: categoryColor,
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
           return mealIteam(
+              color: categoryColor,
               id: categoryMeal[index].id,
               affordability: categoryMeal[index].affordability,
               complexity: categoryMeal[index].complexity,

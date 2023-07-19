@@ -14,6 +14,8 @@ class Category_screen extends StatelessWidget {
         style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
       )),
       body: GridView(
+          physics: const BouncingScrollPhysics()
+              .applyTo(const AlwaysScrollableScrollPhysics()),
           padding: const EdgeInsets.all(15),
           gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200,

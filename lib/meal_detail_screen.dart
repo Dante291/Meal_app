@@ -7,26 +7,31 @@ class MealDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mealId = ModalRoute.of(context)?.settings.arguments as String;
+    final routeArgs =
+        ModalRoute.of(context)?.settings.arguments as Map<String, Object>;
+    final mealId = routeArgs['id'] as String;
+    final bacolor = routeArgs['color'] as Color;
+    final mealTitle = routeArgs['title'] as String;
     final selectedimage =
         DUMMY_MEALS.firstWhere((element) => element.id == mealId);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          selectedimage.title,
-        ),
-      ),
-      body: Column(
+    return Container(
+      color: Colors.white,
+      child: Column(
         children: [
           Container(
             height: 300,
             width: double.infinity,
-            margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
             decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(20)),
+              color: Theme.of(context).primaryColor,
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10)),
+            ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10)),
               child: Image.network(
                 selectedimage.imageUrl,
                 fit: BoxFit.cover,
@@ -35,6 +40,30 @@ class MealDetailScreen extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 8,
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Container(
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: bacolor,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 205, 204, 204),
+                    spreadRadius: 3,
+                    blurRadius: 5,
+                  )
+                ],
+              ),
+              child: Text(
+                mealTitle,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ),
+          )
         ],
       ),
     );
