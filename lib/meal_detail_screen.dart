@@ -20,17 +20,56 @@ class MealDetailScreen extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         color: bacolor,
-        child: Stack(
+        child: Column(
           children: [
-            Positioned(
-                top: 60,
-                left: 7,
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    selectedimage.imageUrl,
+            const SizedBox(
+              height: 32,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const Icon(
+                  Icons.arrow_back_rounded,
+                  size: 36,
+                  color: Colors.white,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  child: Text(
+                    mealTitle,
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    style: const TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600),
                   ),
-                  radius: 200,
-                )),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Icon(
+                  Icons.bookmark_add_rounded,
+                  size: 36,
+                  color: Colors.white,
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                selectedimage.imageUrl,
+              ),
+              radius: 210,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
