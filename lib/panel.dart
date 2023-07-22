@@ -30,14 +30,14 @@ class panel_widget extends StatelessWidget {
                 height: 30,
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 child: Text(
                   'INGRIDIENTS',
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
                 ),
               ),
               SizedBox(
-                height: 150,
+                height: 190,
                 child: ListView.builder(
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   itemCount: selectedmeal.ingredients.length,
@@ -46,8 +46,10 @@ class panel_widget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          height: 20,
+                          margin: EdgeInsets.only(top: 3),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 3),
+                          height: 25,
                           child: Row(children: [
                             const Icon(
                               Icons.circle,
@@ -69,14 +71,14 @@ class panel_widget extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 child: Text(
                   'DIRETIONS',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
                 ),
               ),
               SizedBox(
-                height: 200,
+                height: 290,
                 child: ListView.builder(
                   padding: const EdgeInsets.symmetric(vertical: 1),
                   itemCount: selectedmeal.steps.length,
@@ -95,8 +97,8 @@ class panel_widget extends StatelessWidget {
                               width: 2,
                             ),
                             Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 10, vertical: 5),
                               constraints: BoxConstraints(
                                   maxWidth:
                                       MediaQuery.of(context).size.width * 0.85),
