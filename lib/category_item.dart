@@ -30,11 +30,11 @@ class Category_item extends StatelessWidget {
           ], begin: Alignment.topLeft, end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(15),
           boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(255, 205, 204, 204),
-              spreadRadius: 3,
-              blurRadius: 5,
-            )
+            // BoxShadow(
+            //   color: Color.fromARGB(255, 205, 204, 204),
+            //   spreadRadius: 3,
+            //   blurRadius: 5,
+            // )
           ],
         ),
         child: Text(

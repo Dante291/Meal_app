@@ -9,6 +9,7 @@ class Category_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 50, 50, 50),
       appBar: AppBar(
           title: const Text(
         'Swadisht Khazana',

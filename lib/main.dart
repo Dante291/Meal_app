@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
               bodyLarge: const TextStyle(color: Colors.white),
               bodyMedium: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
               titleLarge: const TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  color: Color.fromARGB(255, 247, 247, 247),
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'RobotoCondensed'))),

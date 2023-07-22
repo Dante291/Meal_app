@@ -1,9 +1,42 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
 
 // ignore: use_key_in_widget_constructors
-class MealDetailScreen extends StatelessWidget {
+class MealDetailScreen extends StatefulWidget {
   static const routename = '/meal-detail';
+
+  @override
+  State<MealDetailScreen> createState() => _MealDetailScreenState();
+}
+
+class _MealDetailScreenState extends State<MealDetailScreen> {
+  void initState() {
+    // TODO: implement initState
+
+    Future.delayed(Duration(seconds: 0)).then((_) {
+      showModalBottomSheet(
+          context: context,
+          builder: (builder) {
+            return BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    color: Colors.white,
+                    child: Text('Im child'),
+                  ),
+                ],
+              ),
+            );
+          });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
