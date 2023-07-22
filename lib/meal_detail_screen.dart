@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:meal_app/dummy_data.dart';
+import 'package:meal_app/panel.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 // ignore: use_key_in_widget_constructors
 class MealDetailScreen extends StatefulWidget {
@@ -12,32 +14,6 @@ class MealDetailScreen extends StatefulWidget {
 }
 
 class _MealDetailScreenState extends State<MealDetailScreen> {
-  void initState() {
-    // TODO: implement initState
-
-    Future.delayed(Duration(seconds: 0)).then((_) {
-      showModalBottomSheet(
-          context: context,
-          builder: (builder) {
-            return BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    height: 200,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                    child: Text('Im child'),
-                  ),
-                ],
-              ),
-            );
-          });
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     final routeArgs =
@@ -47,63 +23,68 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
     final mealTitle = routeArgs['title'] as String;
     final selectedimage =
         DUMMY_MEALS.firstWhere((element) => element.id == mealId);
-    return Material(
-      type: MaterialType.transparency,
-      child: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: bacolor,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 32,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const Icon(
-                  Icons.arrow_back_rounded,
-                  size: 36,
-                  color: Colors.white,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.7,
-                  child: Text(
-                    mealTitle,
-                    textAlign: TextAlign.center,
-                    softWrap: true,
-                    style: const TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Icon(
-                  Icons.bookmark_add_rounded,
-                  size: 36,
-                  color: Colors.white,
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                selectedimage.imageUrl,
+    return Scaffold(
+      body: SlidingUpPanel(
+        borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+        panelBuilder: (controller) =>
+            panel_widget(selectedmeal: selectedimage, controller: controller),
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: bacolor,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 32,
               ),
-              radius: 210,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Icon(
+                    Icons.arrow_back_rounded,
+                    size: 36,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Text(
+                      mealTitle,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      style: const TextStyle(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const Icon(
+                    Icons.bookmark_add_rounded,
+                    size: 36,
+                    color: Colors.white,
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CircleAvatar(
+                backgroundImage: NetworkImage(
+                  selectedimage.imageUrl,
+                ),
+                radius: 210,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+            ],
+          ),
         ),
       ),
     );
