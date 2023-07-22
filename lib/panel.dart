@@ -16,12 +16,19 @@ class panel_widget extends StatelessWidget {
         controller: controller,
         padding: EdgeInsets.zero,
         children: <Widget>[
-          const SizedBox(
-            height: 32,
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(
+                child: Container(
+                  height: 5,
+                  width: 40,
+                  decoration: BoxDecoration(color: Colors.grey[400]),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
@@ -32,7 +39,7 @@ class panel_widget extends StatelessWidget {
               SizedBox(
                 height: 150,
                 child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(vertical: 13),
+                  padding: const EdgeInsets.symmetric(vertical: 8),
                   itemCount: selectedmeal.ingredients.length,
                   itemBuilder: (context, index) {
                     return Column(
@@ -69,7 +76,7 @@ class panel_widget extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 300,
+                height: 200,
                 child: ListView.builder(
                   padding: const EdgeInsets.symmetric(vertical: 1),
                   itemCount: selectedmeal.steps.length,

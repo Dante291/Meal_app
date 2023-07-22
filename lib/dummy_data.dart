@@ -338,7 +338,7 @@ final DUMMY_MEALS = [
     ingredients: [
       '1 Teaspoon melted Butter',
       '2 Tablespoons white Sugar',
-      '2 Ounces 70% dark Chocolate, broken into pieces',
+      '2 Ounces 70% dark Chocolate',
       '1 Tablespoon Butter',
       '1 Tablespoon all-purpose Flour',
       '4 1/3 tablespoons cold Milk',
