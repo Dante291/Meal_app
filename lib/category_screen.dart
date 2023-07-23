@@ -10,11 +10,6 @@ class Category_screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 50, 50, 50),
-      appBar: AppBar(
-          title: const Text(
-        'Swadisht Khazana',
-        style: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
-      )),
       body: GridView(
           physics: const BouncingScrollPhysics()
               .applyTo(const AlwaysScrollableScrollPhysics()),
