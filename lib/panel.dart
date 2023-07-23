@@ -17,7 +17,7 @@ class panel_widget extends StatefulWidget {
 }
 
 class panel_widgetState extends State<panel_widget> {
-  bool allowListScrolling = false;
+  bool allowListScrolling = true;
   final Meal selectedmeal;
   final ScrollController controller;
 
@@ -71,7 +71,7 @@ class panel_widgetState extends State<panel_widget> {
                   SizedBox(
                     height: 190,
                     child: ListView.builder(
-                      physics: allowListScrolling
+                      physics: (allowListScrolling == false)
                           ? const AlwaysScrollableScrollPhysics()
                           : const NeverScrollableScrollPhysics(),
                       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -85,21 +85,30 @@ class panel_widgetState extends State<panel_widget> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 3),
                               height: 25,
-                              child: Row(children: [
-                                const Icon(
-                                  Icons.circle,
-                                  size: 10,
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  selectedmeal.ingredients[index],
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18),
-                                ),
-                              ]),
+                              child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Column(
+                                      children: [
+                                        SizedBox(
+                                          height: 8,
+                                        ),
+                                        Icon(
+                                          Icons.circle,
+                                          size: 10,
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      selectedmeal.ingredients[index],
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18),
+                                    ),
+                                  ]),
                             ),
                           ],
                         );
@@ -122,20 +131,27 @@ class panel_widgetState extends State<panel_widget> {
                       itemBuilder: (context, index) {
                         return Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 0),
+                              horizontal: 10, vertical: 5),
                           child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Icon(
-                                  Icons.circle,
-                                  size: 10,
+                                const Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 8,
+                                    ),
+                                    Icon(
+                                      Icons.circle,
+                                      size: 10,
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(
                                   width: 2,
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 5),
+                                      horizontal: 10, vertical: 0),
                                   constraints: BoxConstraints(
                                       maxWidth:
                                           MediaQuery.of(context).size.width *
