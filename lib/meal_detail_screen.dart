@@ -26,7 +26,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
     return Scaffold(
       body: SlidingUpPanel(
         maxHeight: MediaQuery.of(context).size.height * 0.6,
-        minHeight: MediaQuery.of(context).size.height * 0.38,
+        minHeight: MediaQuery.of(context).size.height * 0.42,
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
         panelBuilder: (controller) =>
