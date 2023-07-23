@@ -64,8 +64,10 @@ class panel_widgetState extends State<panel_widget> {
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Text(
                       'INGRIDIENTS',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 25),
                     ),
                   ),
                   SizedBox(
@@ -105,6 +107,7 @@ class panel_widgetState extends State<panel_widget> {
                                     Text(
                                       selectedmeal.ingredients[index],
                                       style: const TextStyle(
+                                          color: Colors.white,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 18),
                                     ),
@@ -119,8 +122,10 @@ class panel_widgetState extends State<panel_widget> {
                     padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                     child: Text(
                       'DIRETIONS',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 25),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          fontSize: 25),
                     ),
                   ),
                   SizedBox(
@@ -150,6 +155,8 @@ class panel_widgetState extends State<panel_widget> {
                                   width: 2,
                                 ),
                                 Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.85,
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10, vertical: 0),
                                   constraints: BoxConstraints(
@@ -161,6 +168,7 @@ class panel_widgetState extends State<panel_widget> {
                                     softWrap: true,
                                     overflow: TextOverflow.fade,
                                     style: const TextStyle(
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 18),
                                   ),

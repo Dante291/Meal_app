@@ -25,6 +25,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
         DUMMY_MEALS.firstWhere((element) => element.id == mealId);
     return Scaffold(
       body: SlidingUpPanel(
+        color: const Color.fromARGB(255, 50, 50, 50),
         maxHeight: MediaQuery.of(context).size.height * 0.62,
         minHeight: MediaQuery.of(context).size.height * 0.40,
         borderRadius: const BorderRadius.only(

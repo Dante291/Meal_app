@@ -16,7 +16,6 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.indigo,
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(primary: Colors.indigo, secondary: Colors.blueGrey),
           fontFamily: 'Raleway',

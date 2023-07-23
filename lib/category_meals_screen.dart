@@ -16,6 +16,7 @@ class CategoryMealScreen extends StatelessWidget {
       return pew.categories.contains(categoryID);
     }).toList();
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 50, 50, 50),
       appBar: AppBar(
         title: Text(categoryTitle),
         backgroundColor: categoryColor,
