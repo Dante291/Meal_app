@@ -65,7 +65,7 @@ class panel_widgetState extends State<panel_widget> {
                     child: Text(
                       'INGRIDIENTS',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 43, 43, 43),
                           fontWeight: FontWeight.w600,
                           fontSize: 25),
                     ),
@@ -107,7 +107,8 @@ class panel_widgetState extends State<panel_widget> {
                                     Text(
                                       selectedmeal.ingredients[index],
                                       style: const TextStyle(
-                                          color: Colors.white,
+                                          color:
+                                              Color.fromARGB(255, 43, 43, 43),
                                           fontWeight: FontWeight.w500,
                                           fontSize: 18),
                                     ),
@@ -123,7 +124,7 @@ class panel_widgetState extends State<panel_widget> {
                     child: Text(
                       'DIRETIONS',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 43, 43, 43),
                           fontWeight: FontWeight.w700,
                           fontSize: 25),
                     ),
@@ -168,7 +169,7 @@ class panel_widgetState extends State<panel_widget> {
                                     softWrap: true,
                                     overflow: TextOverflow.fade,
                                     style: const TextStyle(
-                                        color: Colors.white,
+                                        color: Color.fromARGB(255, 43, 43, 43),
                                         fontWeight: FontWeight.w500,
                                         fontSize: 18),
                                   ),

@@ -9,7 +9,7 @@ class Category_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 151, 150, 150),
+      backgroundColor: Color.fromARGB(255, 214, 212, 212),
       body: GridView(
           physics: const BouncingScrollPhysics()
               .applyTo(const AlwaysScrollableScrollPhysics()),
